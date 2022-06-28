@@ -21,6 +21,7 @@ from sqlalchemy import Table, Column, Integer, String, MetaData
 from sqlalchemy import event
 from sqlalchemy import select
 from sqlalchemy.inspection import inspect
+from urllib.parse import urlencode, quote_plus
 import pytds
 import sqlalchemy_pytds
 import re
@@ -127,8 +128,15 @@ def get_sql_server_tbls(sa_engine):
 # %%
 def gen_default_sa_engine():
     sa_engine = create_engine('mssql+pytds://'+ 
-        global_cfg.pyExec_uid + ':' + global_cfg.pyExec_upwd + '@' + global_cfg.pyExec_host + ":" + global_cfg.pyExec_port + '/' +  global_cfg.pyExec_db)
+        global_cfg.pyExec_uid + ':' + quote_plus(global_cfg.pyExec_upwd) + '@' + global_cfg.pyExec_host + ":" + global_cfg.pyExec_port + '/' +  global_cfg.pyExec_db)
     return sa_engine
+
+
+def gen_sa_engine(uid, upwd, host, port, db):
+    sa_engine = create_engine('mssql+pytds://'+ 
+        uid + ':' + quote_plus(upwd) + '@' + host + ":" + port + '/' + db)
+    return sa_engine
+
 
 def gen_default_sa_conn():
     sa_engine = gen_default_sa_engine()
