@@ -39,6 +39,7 @@ run the script each Friday after CFTC publishes the reports to update the data
 ## historical_data\daily_data
 
 Several futures daily data.
+
 ![image](https://user-images.githubusercontent.com/4289161/176221898-2a4f9ad2-bca0-4df2-b89f-229a6ddea73c.png)
 
 ## jack_seasonal_trading_strategy_back_test
