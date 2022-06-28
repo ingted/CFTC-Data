@@ -36,3 +36,17 @@ run the script each Friday after CFTC publishes the reports to update the data
 
 ![image](https://user-images.githubusercontent.com/4289161/156403826-7ec48f7c-5704-4446-89f1-cec77f9fb76b.png)
 
+## historical_data\daily_data
+
+Several futures daily data.
+![image](https://user-images.githubusercontent.com/4289161/176221898-2a4f9ad2-bca0-4df2-b89f-229a6ddea73c.png)
+
+## jack_seasonal_trading_strategy_back_test
+
+* daily_data_to_sql_server.ipynb
+Insert data into SQL Server.
+
+
+
+
+
